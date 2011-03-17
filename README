@@ -1,0 +1,8 @@
+PHP Simple Sessions
+03/16/2011
+
+$sess = new Sess();
+$sess->$sess_name = "authentication";
+$sess->start_session();
+$sess->set_session(Array("logged_in" => TRUE));
+$sess->kill_session();
