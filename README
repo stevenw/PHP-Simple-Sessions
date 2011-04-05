@@ -1,5 +1,6 @@
 PHP Simple Sessions
-03/16/2011
+Simple Easy & Secure Sessions
+4/4/2011
 
 $sess = new Sess();
 $sess->$sess_name = "authentication";

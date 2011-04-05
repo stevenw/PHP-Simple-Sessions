@@ -1,5 +1,5 @@
 <?PHP
-#	Sess
+#	Simple Easy & Secure Sessions
 #	The goal of this class is to make PHP's session functions easier & safer to use.
 #
 #	Steven W
