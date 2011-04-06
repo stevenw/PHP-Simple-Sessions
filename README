@@ -1,9 +1,10 @@
-PHP Simple Sessions
 Simple Easy & Secure Sessions
-4/4/2011
+
+4/5/2011
 
 $sess = new Sess();
 $sess->$sess_name = "authentication";
+$sess->lifetime_days(1);
 $sess->start_session();
 $sess->set_session(Array("logged_in" => TRUE));
 $sess->kill_session();
