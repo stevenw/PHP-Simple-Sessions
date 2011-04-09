@@ -42,17 +42,17 @@ Class Sess
 	// Helper Methods
 	public function lifetime_minutes($int = 1)
 	{
-		$this->lifetime = 60 * $int;
+		$this->lifetime = 60 * (int)$int;
 	}
 
 	public function lifetime_hours($int = 1)
 	{
-		$this->lifetime = 3600 * $int;
+		$this->lifetime = 3600 * (int)$int;
 	}
 
 	public function lifetime_days($int = 1)
 	{
-		$this->lifetime = 86400 * $int;
+		$this->lifetime = 86400 * (int)$int;
 	}
 }
 
