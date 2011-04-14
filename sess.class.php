@@ -12,16 +12,16 @@ Class Sess
 	public $lifetime = 3600;	// Default lifetime is one hour
 	public $path = '/';
 	public $domain = '';
-	public $secure_only = FALSE;
+	public $ssl_only = FALSE;
 	public $http_only = TRUE;
-	public $regen_delete = FALSE;
+	public $regen_id = FALSE;
 
 	public function start_session()
 	{
 		session_name($this->sess_name);
-		session_set_cookie_params($this->lifetime, $this->path, $this->domain, $this->secure_only, $this->http_only);
+		session_set_cookie_params($this->lifetime, $this->path, $this->domain, $this->ssl_only, $this->http_only);
 		session_start();
-		session_regenerate_id($this->regen_delete);
+		session_regenerate_id($this->regen_id);
 	}
 
 	public function set_session($array = Array())
