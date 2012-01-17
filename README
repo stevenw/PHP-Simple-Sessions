@@ -1,10 +1,10 @@
 Simple Easy & Secure Sessions
 
-4/5/2011
+01/16/2012
 
 $sess = new Sess();
-$sess->$sess_name = "authentication";
+$sess->name = "authentication";
 $sess->lifetime_days(1);
-$sess->start_session();
-$sess->set_session(Array("logged_in" => TRUE));
-$sess->kill_session();
+$sess->start();
+$sess->set(Array("logged_in" => TRUE));
+$sess->kill();
