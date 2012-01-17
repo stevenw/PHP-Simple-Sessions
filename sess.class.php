@@ -4,27 +4,27 @@
 #	Written for PHP 5.2
 #
 #	Steven W
-#	4/5/2011
 #	https://github.com/stevenw/PHP-Simple-Sessions
+
 Class Sess
 {
-	public $sess_name = 'session';
+	public $name = 'session';
 	public $lifetime = 3600;	// Default lifetime is one hour
 	public $path = '/';
 	public $domain = '';
-	public $ssl_only = FALSE;
-	public $http_only = TRUE;
-	public $regen_id = FALSE;
+	public $forceSSL = FALSE;
+	public $forceHTTP = TRUE;
+	public $regenId = FALSE;
 
-	public function start_session()
+	public function start()
 	{
-		session_name($this->sess_name);
-		session_set_cookie_params($this->lifetime, $this->path, $this->domain, $this->ssl_only, $this->http_only);
+		session_name($this->name);
+		session_set_cookie_params($this->lifetime, $this->path, $this->domain, $this->forceSSL, $this->forceHTTP);
 		session_start();
-		session_regenerate_id($this->regen_id);
+		session_regenerate_id($this->regenId);
 	}
 
-	public function set_session($array = Array())
+	public function set($array = Array())
 	{
 		foreach ($array as $k => $v)
 		{
@@ -32,11 +32,11 @@ Class Sess
 		}
 	}
 
-	public function kill_session()
+	public function kill()
 	{
 		$_SESSION = Array();
 		session_destroy();
-		setcookie($this->sess_name, "", time() - $this->lifetime);
+		setcookie($this->name, "", time() - $this->lifetime);
 	}
 
 	// Helper Methods
@@ -56,5 +56,4 @@ Class Sess
 	}
 }
 
-/* End of file sess,class.php */
-/* Location: /sess.class.php */
+/* End of file sess.class.php */
